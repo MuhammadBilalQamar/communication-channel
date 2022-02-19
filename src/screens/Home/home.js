@@ -22,6 +22,9 @@ import styles from './home_styles';
 //ICONS
 import { AntDesign } from '@expo/vector-icons';
 
+//SUBVIEWS  
+import { MyGroups, AllGroups, Profile } from './Views';
+
 const {
   parentContainer,
   logoutBtnContainer
@@ -91,24 +94,24 @@ const Home = ({ isLoading, navigation }) => {
               <Text style={{ color: BaseColor.whiteColor, marginLeft: 5 }}>logout</Text>
             </TouchableOpacity>
           </View>
+
+          {/* TAB BAR VIEW */}
           <TabBar activeTabColor={BaseColor.whiteColor} tabTextColor="white">
+            {/* TAB 1 (MY GROUPS) */}
             <View title="My Groups">
-              <Text>
-                Groups
-              </Text>
+              <MyGroups />
             </View>
+
+            {/* TAB 2 (ALL GROUPS) */}
             <View title="All Groups">
-              <Text>
-                All Groups
-              </Text>
+              <AllGroups />
             </View>
+
+            {/* TAB 3 (PROFILE) */}
             <View title="Profile">
-              <Text>
-                Profile
-              </Text>
+              <Profile />
             </View>
           </TabBar>
-          <View style={{ marginTop: 30 }} />
         </SafeAreaView>
       </GradientStyle>
     </>
